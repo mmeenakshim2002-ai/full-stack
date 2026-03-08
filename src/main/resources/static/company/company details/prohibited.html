@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products Prohibited for Sale</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+
+header{
+    background:#6a0dad;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#6a0dad;
+    margin-top:25px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+li{
+    margin:6px 0;
+}
+
+.search-box{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+.policy{
+    margin-top:20px;
+    line-height:1.6;
+}
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+.highlight{
+    background:yellow;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Products Prohibited for Sale</h1>
+<p>Our platform follows strict policies to ensure safe and legal shopping.</p>
+</header>
+
+<div class="container">
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search prohibited products...">
+</div>
+
+<div class="policy">
+
+<h2>1. Illegal Products</h2>
+<ul>
+<li>Illegal drugs and narcotics</li>
+<li>Fake government documents</li>
+<li>Counterfeit currency</li>
+</ul>
+
+<h2>2. Weapons and Explosives</h2>
+<ul>
+<li>Firearms and guns</li>
+<li>Ammunition</li>
+<li>Explosives and dangerous fireworks</li>
+</ul>
+
+<h2>3. Counterfeit Products</h2>
+<ul>
+<li>Fake branded clothes</li>
+<li>Replica watches</li>
+<li>Unauthorized branded electronics</li>
+</ul>
+
+<h2>4. Hazardous Materials</h2>
+<ul>
+<li>Toxic chemicals</li>
+<li>Poisonous substances</li>
+<li>Unsafe medical products</li>
+</ul>
+
+<h2>5. Adult or Obscene Content</h2>
+<ul>
+<li>Pornographic materials</li>
+<li>Adult toys</li>
+<li>Explicit content</li>
+</ul>
+
+<h2>6. Stolen or Fraudulent Goods</h2>
+<ul>
+<li>Stolen electronics</li>
+<li>Fraudulently obtained items</li>
+<li>Items without proper ownership</li>
+</ul>
+
+<h2>Policy Enforcement</h2>
+<p>
+If any seller lists prohibited products, the product will be removed immediately.
+Repeated violations may result in account suspension or permanent ban from our platform.
+</p>
+
+</div>
+</div>
+
+<footer>
+<p>© 2026 YourStore | All Rights Reserved</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(){
+    let filter = searchInput.value.toLowerCase();
+    let items = document.querySelectorAll("li");
+
+    items.forEach(function(item){
+        let text = item.textContent.toLowerCase();
+        if(text.includes(filter)){
+            item.style.display = "";
+        }else{
+            item.style.display = "none";
+        }
+    });
+});
+</script>
+
+<script src="card.js"></script>
+</body>
+</html>

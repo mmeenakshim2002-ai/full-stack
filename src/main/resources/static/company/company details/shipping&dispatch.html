@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipping & Dispatch</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+
+header{
+    background:#8e44ad;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+}
+
+.accordion{
+    background:white;
+    border-radius:8px;
+    margin-bottom:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.accordion button{
+    width:100%;
+    padding:18px;
+    border:none;
+    outline:none;
+    text-align:left;
+    font-size:18px;
+    background:#fff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.accordion button:hover{
+    background:#f0e6f7;
+}
+
+.panel{
+    display:none;
+    padding:0 18px 18px 18px;
+    color:#333;
+}
+
+.panel ul{
+    margin-left:20px;
+}
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Shipping & Dispatch Policy</h1>
+<p>Know how your order is processed and delivered</p>
+</header>
+
+<div class="container">
+
+<div class="accordion">
+<button>Order Processing Time</button>
+<div class="panel">
+<p>Orders are processed within 1–2 business days after payment confirmation.</p>
+</div>
+</div>
+
+<div class="accordion">
+<button>Dispatch Information</button>
+<div class="panel">
+<p>Your order will be packed carefully and dispatched from our warehouse. Once dispatched, you will receive tracking details via email.</p>
+</div>
+</div>
+
+<div class="accordion">
+<button>Delivery Time</button>
+<div class="panel">
+<ul>
+<li>Local Delivery: 2–3 days</li>
+<li>Domestic Shipping: 3–7 days</li>
+<li>Remote Areas: 5–10 days</li>
+</ul>
+</div>
+</div>
+
+<div class="accordion">
+<button>Shipping Charges</button>
+<div class="panel">
+<ul>
+<li>Free shipping for orders above ₹1000</li>
+<li>Standard delivery: ₹50</li>
+<li>Express delivery: ₹120</li>
+</ul>
+</div>
+</div>
+
+<div class="accordion">
+<button>Order Tracking</button>
+<div class="panel">
+<p>After dispatch, a tracking ID will be sent to your email or SMS. You can track your order on the courier partner website.</p>
+</div>
+</div>
+
+<div class="accordion">
+<button>Delivery Issues</button>
+<div class="panel">
+<p>If your order is delayed or damaged, please contact our support team immediately.</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 YourStore | All Rights Reserved</p>
+</footer>
+
+<script>
+
+let buttons = document.querySelectorAll(".accordion button");
+
+buttons.forEach(function(btn){
+
+btn.addEventListener("click", function(){
+
+let panel = this.nextElementSibling;
+
+if(panel.style.display === "block"){
+panel.style.display = "none";
+}
+else{
+panel.style.display = "block";
+}
+
+});
+
+});
+
+</script>
+
+<script src="card.js"></script>
+
+</body>
+</html>

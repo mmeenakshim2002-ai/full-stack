@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <style>
+        *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+
+body{
+margin:0;
+height:100vh;
+width:100%;
+}
+
+
+.container{
+display:flex;
+width:100%;
+height:100vh;
+}
+
+.login-container{
+width:60%;
+background:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.signup-container{
+width:40%;
+background:linear-gradient(to right,#36d1dc,#5b86e5);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.container{
+display:flex;
+width:100%;
+height:100vh;
+}
+    </style>
+
+<body>
+<div class="header">
+        <div class="logo">
+        <img src="logo.png" alt="logo" class="logo-image">
+         <span class="logo-text">MRM Handmade Craft</span>
+        </div>
+        <div class="nav-container">
+        <div class="nav-item"><a href="home.html" class="line">Home</a></div>
+        <div class="nav-item"><a href="prod.html" class="line">Product</a></div>
+        <div class="nav-item"><a href="Add to card.html" class="line">Add to card</a></div>
+        <div class="nav-item"><a href="About  us.html" class="line">About us</a></div>
+        </div>
+    </div>
+<div class="container">
+
+    <!-- Login Section -->
+    <div class="login-container" style="margin-top:100px;">
+
+        <h2 style="color:blue; font-size:40px;">Sign in to MRM Handmade Craft </h2>
+
+        <div class="social-icons" style="margin-top:30px;">
+            <button style="background-color:whitesmoke; color:black">f</button>
+            <button style="background-color:whitesmoke; color:black">G+</button>
+            <button style="background-color:whitesmoke; color:black">in</button>
+        </div>
+
+        <p style="margin-top:30px;">or use your email account</p>
+
+        <input type="email" placeholder="Email" style="margin-top:30px; padding-top:15px; padding-right:80px;">
+        <input type="password" placeholder="Password" style="margin-top:20px; padding-top:15px; padding-right:80px;">
+
+        <a href="#" style="margin-top:20px; color:blue;">Forgot your password?</a>
+
+        <button class="signin" style="margin-top:30px;">SIGN IN</button>
+
+    </div>
+
+    <!-- Signup Section -->
+    <div class="signup-container">
+
+        <h2 style="font-size:40px;">Hello, Friend!</h2>
+
+        <p style="font-size:25px; margin-top: 25px;">Enter your personal details and<br> start journey with us</p>
+
+        <button onclick="registerUser()" class="signup" style="margin-top:25px; background-color:skyblue; color:white ;border:2px solid white;"><a href="createaccount.html" class="line">Create Account</a></button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+   

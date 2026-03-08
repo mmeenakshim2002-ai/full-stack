@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f5f5;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+text-align:center;
+width:400px;
+}
+
+h2{
+color:red;
+margin-bottom:20px;
+}
+
+p{
+margin-bottom:25px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+.delete-btn{
+background:red;
+color:white;
+margin-right:10px;
+}
+
+.cancel-btn{
+background:gray;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Delete Account</h2>
+
+<p>Are you sure you want to permanently delete your account?  
+This action cannot be undone.</p>
+
+<button class="delete-btn" onclick="deleteAccount()">Delete</button>
+
+<button class="cancel-btn" onclick="cancelDelete()">Cancel</button>
+
+</div>
+
+<script>
+
+function deleteAccount(){
+
+let confirmDelete = confirm("Are you sure you want to delete your account?");
+
+if(confirmDelete){
+
+alert("Your account has been deleted.");
+
+window.location.href="home.html";
+
+}
+
+}
+
+function cancelDelete(){
+
+window.location.href="home.html";
+
+}
+
+</script>
+
+<script src="card.js"></script>
+</body>
+</html>
