@@ -1,5 +1,6 @@
 package com.Project.E_commerce.controller;
 
+import com.Project.E_commerce.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,11 +19,16 @@ public class AuthController {
     @Autowired
     DeletedUserRepository deletedUserRepository;
 
+//    @PostMapping("/register")
+//    public User register(@RequestBody User user){
+//
+//        return userRepository.save(user);
+//
+//    }
+
     @PostMapping("/register")
-    public User register(@RequestBody User user){
-
+    public User register(@ModelAttribute User user){
         return userRepository.save(user);
-
     }
 //
 //    @PostMapping("/createaccount")
@@ -32,13 +38,23 @@ public class AuthController {
 //
 //    }
 
-    @PostMapping("/login")
-    public User login(@RequestParam String email,
-                      @RequestParam String password){
+//    @PostMapping("/login")
+//    public User login(@RequestParam String email,
+//                      @RequestParam String password){
+//
+//        return userRepository.findByEmailAndPassword(email,password);
+//
+//    }
 
-        return userRepository.findByEmailAndPassword(email,password);
-
-    }
+//    @PostMapping("/login")
+//    public String login(@RequestParam String email,@RequestParam String password){
+//        User user = userRepository.findByEmailAndPassword(email,password);
+//        if(user != null){
+//            return "Login successful";
+//        }else{
+//            return "Invalid Email or Password";
+//        }
+//    }
 
     @PostMapping("/deleteAccount")
     public String deleteAccount(@RequestParam Long id){

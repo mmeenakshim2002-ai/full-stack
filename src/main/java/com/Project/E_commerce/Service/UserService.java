@@ -12,16 +12,16 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public User register(User user){
+    public User register(User user) {
 
         return userRepository.save(user);
 
     }
-
-    public User login(String email,String password){
-
-        return userRepository.findByEmailAndPassword(email,password);
-
-    }
-
 }
+
+//    public User login(String email,String password){
+//
+//        return userRepository.findByEmailAndPassword(email,password);
+//
+//    }
+
