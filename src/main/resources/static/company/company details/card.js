@@ -336,35 +336,6 @@ alert("Account Created Successfully");
 }
 
 
-function registerUser(){
-
-fetch("http://localhost:8080/api/auth/register",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-
-fullname:document.getElementById("fullname").value,
-phone:document.getElementById("phone").value,
-address:document.getElementById("address").value,
-email:document.getElementById("email").value,
-password:document.getElementById("password").value
-
-})
-
-})
-
-.then(response => response.json())
-.then(data => {
-alert("Account Created Successfully");
-});
-
-}
-
 
 
 const checkoutBtn = document.getElementById('checkout-btn');
@@ -383,41 +354,43 @@ if (clearCartBtn) {
     clearCartBtn.addEventListener('click', clearCart);
 }
 
-document.addEventListener('DOMContentLoaded', initCart);
-
+document.addEventListener('DOMContentLoaded', function() {
+    initCart();
+    const form = document.getElementById("profileForm");
+    if(form){
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            registerUser();
+        });
+    }
+});
 
 function registerUser(){
 
-const userData = {
-fullname:document.getElementById("fullname").value,
-phone:document.getElementById("phone").value,
-address:document.getElementById("address").value,
-email:document.getElementById("email").value,
-password:document.getElementById("password").value
-};
+    const userData = {
+        fullname: document.querySelector("[name='fullname']").value,
+        phone: document.querySelector("[name='phone']").value,
+        address: document.querySelector("[name='address']").value,
+        email: document.querySelector("[name='email']")?.value || "",
+        password: document.querySelector("[name='password']")?.value || ""
+    };
 
-fetch("http://localhost:8080/api/auth/register",{
+    console.log("Sending data:", userData); // DEBUG
 
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify(userData)
-
-})
-
-.then(response => response.json())
-.then(data => {
-alert("Account Created Successfully");
-console.log(data);
-})
-
-.catch(error=>{
-console.error("Error:",error);
-});
-
+    fetch("http://localhost:8081/api/auth/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+    })
+        .then(response => response.json())
+        .then(data => {
+            alert("Saved Successfully");
+            console.log("Response:", data);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
 }
-
 

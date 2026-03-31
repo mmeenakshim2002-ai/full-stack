@@ -19,17 +19,17 @@ public class AuthController {
     @Autowired
     DeletedUserRepository deletedUserRepository;
 
-//    @PostMapping("/register")
-//    public User register(@RequestBody User user){
-//
-//        return userRepository.save(user);
-//
-//    }
-
     @PostMapping("/register")
-    public User register(@ModelAttribute User user){
+    public User register(@RequestBody User user){
+
         return userRepository.save(user);
+
     }
+
+//    @PostMapping("/register")
+//    public User register(@ModelAttribute User user){
+//        return userRepository.save(user);
+//    }
 //
 //    @PostMapping("/createaccount")
 //    public String register(@ModelAttribute User user){
